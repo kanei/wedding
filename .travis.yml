@@ -29,3 +29,7 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 exclude: [vendor]
+
+notifications:
+  email:
+    - nanorepublica@gmail.com
