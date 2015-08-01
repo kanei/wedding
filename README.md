@@ -11,3 +11,15 @@ View this jekyll theme in action [here](https://jeromelachaud.github.io/grayscal
 
 =========
 For more details, read the [documentation](http://jekyllrb.com/)
+
+
+# TODO
+
+* Map Markers
+* Content
+* form
+    * Name
+    * email
+    * address....
+    * comments (eg are you likely to move between now & then)
+* Zapier
