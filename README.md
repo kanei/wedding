@@ -1,17 +1,20 @@
-Grayscale Jekyll theme
-=========================
+# Wedding Site
 
-Jekyll theme based on [Grayscale bootstrap theme ](http://ironsummitmedia.github.io/startbootstrap-grayscale/)
+## Creating new section
 
-## Demo
-View this jekyll theme in action [here](https://jeromelachaud.github.io/grayscale-theme)
-
-## Screenshot
-![screenshot](https://raw.githubusercontent.com/jeromelachaud/grayscale-theme/master/screenshot.png)
-
-=========
-For more details, read the [documentation](http://jekyllrb.com/)
-
+* Create a new markdown file in `./sections/` directory with the following front matter:
+    ```
+    ---
+    layout: content
+    name: <name of section>
+    ---
+    ```
+* Add a hash to the `sections` in `_config.yml` like so:
+    ```
+    - name: <name of section # should match the above file>
+      menu: <true|false> # should this section appear in the top menu?
+      title: <nice name for the section>
+    ```
 
 # TODO
 
