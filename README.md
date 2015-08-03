@@ -17,7 +17,6 @@ For more details, read the [documentation](http://jekyllrb.com/)
 
 * Map
     * Markers
-    * pop up with info
 * Content - check it all with Holly
 * form
     * fields
