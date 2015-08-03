@@ -15,8 +15,6 @@ For more details, read the [documentation](http://jekyllrb.com/)
 
 # TODO
 
-* Map
-    * Markers
 * Content - check it all with Holly
 * form
     * fields
