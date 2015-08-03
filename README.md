@@ -6,7 +6,7 @@
     ```
     ---
     layout: content
-    name: <name of section>
+    name: <name of sections>
     ---
     ```
 * Add a hash to the `sections` in `_config.yml` like so:
