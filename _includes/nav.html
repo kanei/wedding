@@ -17,15 +17,13 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#download">Download</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+                    {% for item in site.page-sections %}
+                        {% if item.menu %}
+                            <li>
+                                <a class="page-scroll" href="#{{ item.name }}">{{ item.name | replace: '_', ' '}}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

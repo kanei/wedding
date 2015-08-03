@@ -20,6 +20,16 @@ footer: Holly & Andy
 #   - title: facebook
 #     url: https://facebook.com
 
+page-sections:
+    - name: register
+      menu: true
+    - name: how_long
+      menu: true
+    - name: contact
+      menu: true
+    - name: map
+      menu: false
+
 # Build settings
 markdown: kramdown
 permalink: pretty

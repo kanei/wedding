@@ -268,7 +268,7 @@ a:focus {
     padding-top: 100px;
 }
 
-.download-section {
+.download-section, .how_long-section {
     width: 100%;
     padding: 50px 0;
     color: #0c0c0c;
@@ -280,7 +280,7 @@ a:focus {
     -o-background-size: cover;
 }
 
-.download-section h2 {
+.download-section h2, .how_long-section h2 {
     font-size: 50px;
 }
 
@@ -300,7 +300,7 @@ a:focus {
         padding-top: 200px;
     }
 
-    .download-section {
+    .download-section, .how_long-section {
         padding: 100px 0;
     }
 

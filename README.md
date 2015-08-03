@@ -17,6 +17,7 @@ For more details, read the [documentation](http://jekyllrb.com/)
 
 * Map Markers
 * Content
+    * second picture needs modifying
 * form
     * Name
     * email
