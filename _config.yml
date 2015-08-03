@@ -25,6 +25,7 @@ page-sections:
       menu: true
     - name: how_long
       menu: true
+      title: How Long?
     - name: contact
       menu: true
     - name: map

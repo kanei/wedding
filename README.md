@@ -17,12 +17,12 @@ For more details, read the [documentation](http://jekyllrb.com/)
 
 * Map
     * Markers
-    * pop up with info?
-* Content
-    * second picture needs modifying
+    * pop up with info
+* Content - check it all with Holly
 * form
-    * Name
-    * email
-    * address....
-    * comments (eg are you likely to move between now & then)
-* Zapier
+    * fields
+        * Name
+        * email
+        * address....
+        * comments (eg are you likely to move between now & then)
+    * Zapier
