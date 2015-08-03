@@ -278,8 +278,8 @@ function init() {
 
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
     var image = 'img/map-marker2.png';
-    var downinginfo = 'Reception & Evening Entertainment @ Downing College on Regents Street.';
-    var c3info = 'Ceremony @ New C3 Centre <br/>on Coldhams Lane';
+    var downinginfo = '<strong>What:</strong> Reception & Evening Entertainment <br/>\
+                        <strong>Where:</strong> Downing College on Regents Street.';
 
     var downingLatLng = new google.maps.LatLng(52.201469, 0.125178);
     var downingMarker = new google.maps.Marker({
@@ -297,6 +297,9 @@ function init() {
         downingInfoWindow.open(map, downingMarker);
     });
 
+    // var c3info = 'Ceremony @ New C3 Centre <br/>on Coldhams Lane';
+    var c3info = '<strong>What:</strong> Wedding Ceremony <br/>\
+    <strong>Where:</strong> New C3 Centre on Coldhams Lane';
     var c3LatLng = new google.maps.LatLng(52.200594, 0.156914);
     var c3Marker = new google.maps.Marker({
         position: c3LatLng,

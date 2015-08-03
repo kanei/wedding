@@ -19,10 +19,4 @@
 # TODO
 
 * Content - check it all with Holly
-* form
-    * fields
-        * Name
-        * email
-        * address....
-        * comments (eg are you likely to move between now & then)
-    * Zapier
+* Test on Mum
