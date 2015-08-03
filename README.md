@@ -15,7 +15,9 @@ For more details, read the [documentation](http://jekyllrb.com/)
 
 # TODO
 
-* Map Markers
+* Map
+    * Markers
+    * pop up with info?
 * Content
     * second picture needs modifying
 * form
