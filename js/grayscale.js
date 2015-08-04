@@ -279,7 +279,7 @@ function init() {
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
     var image = 'img/map-marker2.png';
     var downinginfo = '<strong>What:</strong> Reception & Evening Entertainment <br/>\
-                        <strong>Where:</strong> Downing College on Regents Street.';
+                        <strong>Where:</strong> Downing College on Regent Street.';
 
     var downingLatLng = new google.maps.LatLng(52.201469, 0.125178);
     var downingMarker = new google.maps.Marker({
