@@ -6,12 +6,20 @@
 
 // jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
+    nav_collapse()
+});
+
+$(document).ready(function() {
+    nav_collapse()
+})
+
+function nav_collapse() {
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
     }
-});
+}
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
@@ -31,7 +39,7 @@ $('.navbar-collapse ul li a').click(function() {
 
 function update() {
     var units = countdown.YEARS | countdown.MONTHS | countdown.WEEKS | countdown.DAYS;
-
+    countdown.setLabels(null, null, '<br /> and ')
     var start = new Date(2016, 7, 6),
         ts = countdown(null, start, units);
 
@@ -49,9 +57,19 @@ google.maps.event.addDomListener(window, 'load', init);
 function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+    if (window.screen.availWidth <= 1024) {
+        var zoom = 13;
+        var autoOpen = false;
+    } else {
+        var autoOpen = true;
+        var zoom = 15;
+    }
     var mapOptions = {
         // How zoomed in you want the map to start at (always required)
-        zoom: 15,
+        // zoom: 15,
+        zoom: zoom,
+        maxZoom: zoom,
+        minZoom: zoom,
 
         // The latitude and longitude to center the map (always required)
         center: new google.maps.LatLng(52.2006602, 0.14), // New York
@@ -292,7 +310,9 @@ function init() {
         maxWidth: 300,
         position: downingLatLng
     });
-    downingInfoWindow.open(map, downingMarker);
+    if (autoOpen === true) {
+        downingInfoWindow.open(map, downingMarker);
+    }
     google.maps.event.addListener(downingMarker, 'click', function() {
         downingInfoWindow.open(map, downingMarker);
     });
@@ -311,7 +331,9 @@ function init() {
         maxWidth: 300,
         position: c3LatLng
     });
-    c3InfoWindow.open(map, c3Marker);
+    if (autoOpen === true) {
+        c3InfoWindow.open(map, c3Marker);
+    }
 
     google.maps.event.addListener(c3Marker, 'click', function() {
         c3InfoWindow.open(map, c3Marker);
@@ -320,4 +342,43 @@ function init() {
 
 
     update();
+}
+
+
+// Create a clone of the menu, right next to original.
+$('#bunting').addClass('original')
+          .clone()
+          .insertAfter('#bunting')
+          .addClass('cloned')
+          .css('position','fixed')
+          .css('top','0')
+          .css('margin-top','0')
+          .css('z-index','500')
+          .removeClass('original').hide();
+
+scrollIntervalID = setInterval(stickIt, 10);
+
+
+function stickIt() {
+
+  var orgElementPos = $('.original').offset();
+  var navPos = $('nav').offset()
+  var navHeight = $('nav').height()
+  orgElementTop = orgElementPos.top - navHeight;
+
+  if ($(window).scrollTop() >= (orgElementTop)) {
+    // scrolled past the original position; now only show the cloned, sticky element.
+
+    // Cloned element should always have same left position and width as original element.
+    orgElement = $('.original');
+    coordsOrgElement = orgElement.offset();
+    leftOrgElement = coordsOrgElement.left;
+    widthOrgElement = orgElement.css('width');
+    $('.cloned').css('left',leftOrgElement+'px').css('top',navHeight).css('width',widthOrgElement).show();
+    $('.original').css('visibility','hidden');
+  } else {
+    // not scrolled past the menu; only show the original menu.
+    $('.cloned').hide();
+    $('.original').css('visibility','visible');
+  }
 }

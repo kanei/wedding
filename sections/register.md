@@ -3,7 +3,6 @@ layout: content
 name: about
 ---
 
-
 ## We need your contact details!
 
 <!-- Change the width and height values to suit you best -->

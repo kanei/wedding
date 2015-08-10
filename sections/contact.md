@@ -2,7 +2,7 @@
 layout: content
 name: contact
 ---
-## Contact
+## Contact Us
 
 If you have any questions please email us at:
 

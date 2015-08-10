@@ -23,13 +23,16 @@ footer: Holly & Andy
 page-sections:
     - name: register
       menu: true
+      title: Address Book
     - name: how_long
       menu: true
       title: How Long?
     - name: contact
       menu: true
+      title: contact us
     - name: map
-      menu: false
+      menu: true
+      title: Where?
 
 # Build settings
 markdown: kramdown

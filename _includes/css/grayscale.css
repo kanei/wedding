@@ -55,7 +55,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #D4DD27;
+    color: #D6DFC5;
 }
 
 .light {
@@ -64,7 +64,7 @@ a:focus {
 
 .navbar-custom {
     margin-bottom: 0;
-    border-bottom: 1px solid rgba(255,255,255,.3);
+    border-bottom: 1px solid rgba(0,0,0,.3);
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: {{ site.color.primary-dark }};
@@ -127,6 +127,7 @@ a:focus {
         background-color: {{ site.color.primary-dark }};
     }
 
+
     .navbar-custom a {
         color: #fcfcfc;
     }
@@ -179,7 +180,27 @@ a:focus {
     }
 
     .intro .intro-body .brand-heading {
+        font-size: 70px;
+        white-space: nowrap;
+    }
+    .intro .intro-body .sub-head {
+        font-size: 43px;
+    }
+
+    .intro .intro-body .intro-text {
+        font-size: 30px;
+    }
+}
+
+@media(min-width:1024px) {
+    .intro {
+        height: 100%;
+        padding: 0;
+    }
+
+    .intro .intro-body .brand-heading {
         font-size: 100px;
+        white-space: nowrap;
     }
     .intro .intro-body .sub-head {
         font-size: 43px;
@@ -264,6 +285,13 @@ a:focus {
     }
 }
 
+#bunting {
+    width: 100%;
+    background: url(/img/yellow-sage-banner-1.png) repeat-x left top scroll;
+    background-size: 20%;
+    height: 100px;
+}
+
 .content-section {
     padding-top: 100px;
 }
@@ -272,7 +300,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #0c0c0c;
-    background: url(/img/downing.png) no-repeat center center scroll;
+    background: url(/img/Downing.png) no-repeat center center scroll;
     background-color: {{ site.color.primary-dark }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -281,13 +309,33 @@ a:focus {
 }
 
 .how_long-section h2 {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 #countdown {
-    /*font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;*/
-    font-size: 70px;
+    font-size: 40px;
 }
+
+@media(min-width:767px) {
+    .how_long-section h2 {
+        font-size: 40px;
+    }
+
+    #countdown {
+        font-size: 50px;
+    }
+}
+
+@media(min-width:1024px) {
+
+    .how_long-section h2 {
+        font-size: 50px;
+    }
+    #countdown {
+        font-size: 70px;
+    }
+}
+
 
 #map {
     width: 100%;
