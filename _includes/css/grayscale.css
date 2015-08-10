@@ -300,7 +300,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #0c0c0c;
-    background: url(/img/Downing.png) no-repeat center center scroll;
+    background: url(/img/downing.png) no-repeat center center scroll;
     background-color: {{ site.color.primary-dark }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
