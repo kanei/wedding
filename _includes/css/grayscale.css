@@ -37,7 +37,7 @@ p {
     line-height: 1.5;
 }
 
-@media(min-width:767px) {
+@media(min-width:993px) {
     p {
         margin: 0 0 35px;
         font-size: 25px;
@@ -111,7 +111,7 @@ a:focus {
     background-color: rgba(255,255,255,.3);
 }
 
-@media(min-width:767px) {
+@media(min-width:993px) {
     .navbar {
         padding: 20px 0;
         border-bottom: 0;
@@ -173,7 +173,7 @@ a:focus {
     font-size: 38px;
 }
 
-@media(min-width:767px) {
+@media(min-width:993px) {
     .intro {
         height: 100%;
         padding: 0;
@@ -289,7 +289,28 @@ a:focus {
     width: 100%;
     background: url(/img/yellow-sage-banner-1.png) repeat-x left top scroll;
     background-size: 20%;
+    /*background-size: contain;*/
     height: 100px;
+}
+
+@media(min-width:993px) {
+    #bunting {
+        width: 100%;
+        background: url(/img/yellow-sage-banner-1.png) repeat-x left top scroll;
+        /*background-size: contain;*/
+        background-size: 20%;
+        height: 100px;
+    }
+}
+
+@media(min-width:1400px) {
+    #bunting {
+        width: 100%;
+        background: url(/img/yellow-sage-banner-1.png) repeat-x left top scroll;
+        /*background-size: contain;*/
+        background-size: auto 100px;
+        height: 100px;
+    }
 }
 
 .content-section {
@@ -314,15 +335,17 @@ a:focus {
 
 #countdown {
     font-size: 40px;
+    margin: 0;
 }
 
-@media(min-width:767px) {
+@media(min-width:993px) {
     .how_long-section h2 {
         font-size: 40px;
     }
 
     #countdown {
         font-size: 50px;
+        margin: 0;
     }
 }
 
@@ -332,7 +355,8 @@ a:focus {
         font-size: 50px;
     }
     #countdown {
-        font-size: 70px;
+        font-size: 60px;
+        margin: 0;
     }
 }
 
@@ -343,13 +367,13 @@ a:focus {
     margin-top: 100px;
 }
 
-@media(min-width:767px) {
+@media(min-width:993px) {
     .content-section {
         padding-top: 200px;
     }
 
     .how_long-section {
-        padding: 100px 0;
+        padding: 80px 0;
     }
 
     #map {
@@ -395,7 +419,7 @@ ul.banner-social-buttons li {
     }
 }
 
-@media(max-width:767px) {
+@media(max-width:993px) {
     ul.banner-social-buttons li {
         display: block;
         margin-bottom: 20px;
