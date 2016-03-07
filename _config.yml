@@ -21,9 +21,12 @@ footer: Holly & Andy
 #     url: https://facebook.com
 
 page-sections:
-    - name: register
+    # - name: register
+    #   menu: false
+    #   title: Address Book
+    - name: accommodation
       menu: true
-      title: Address Book
+      title: Accommodation
     - name: how_long
       menu: true
       title: How Long?
