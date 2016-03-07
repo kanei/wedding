@@ -35,10 +35,6 @@ Below is a list of other room options within Cambridge, prices below are based o
             <td>£110</td>
           </tr>
           <tr>
-            <td><a href="http://www.parkviewhotel.co.uk/tariff.htm">Parkview guest house</a></td>
-            <td>£75</td>
-          </tr>
-          <tr>
             <td><a href="http://www.booking.com/hotel/gb/the-castle-cambridge.en-gb.html?checkin=2016-08-06;checkout=2016-08-07;group_adults=2">The Castle B&amp;B</a></td>
             <td>£75</td>
           </tr>
