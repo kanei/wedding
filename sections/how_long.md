@@ -1,6 +1,6 @@
 ---
 layout: content
-name: download
+key: how_long
 ---
 ## How Long till the big day?
 

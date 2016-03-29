@@ -17,16 +17,24 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    {% for item in site.page-sections %}
-                        {% if item.menu %}
+
+                    {% for item in site.site-map[page.key].menu %}
                             <li>
-                                {% if item.title %}
-                                    <a class="page-scroll" href="#{{ item.name }}">{{ item.title }}</a>
+                                {% if item == "home" %}
+                                    <a class="page-scroll" href="/">{{ site.site-map[item].title }}</a>
+                                {% elsif site.site-map[item].submenu %}
+                                    <a class="dropdown-toggle" data-toggle="dropdown">{{ site.site-map[item].title }}</a>
+                                    <ul class="dropdown-menu">
+                                        {% for subitem in site.site-map[item].submenu %}
+                                            <li>
+                                                <a class="page-scroll" href="/sections/{{ subitem }}">{{ site.site-map[subitem].title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
                                 {% else %}
-                                    <a class="page-scroll" href="#{{ item.name }}">{{ item.name | replace: '_', ' '}}</a>
+                                    <a class="page-scroll" href="/sections/{{ item }}">{{ site.site-map[item].title }}</a>
                                 {% endif %}
                             </li>
-                        {% endif %}
                     {% endfor %}
                 </ul>
             </div>

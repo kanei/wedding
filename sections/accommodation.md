@@ -1,6 +1,6 @@
 ---
 layout: content
-name: accommodation
+key: accommodation
 ---
 # Accommodation Options in Cambridge
 

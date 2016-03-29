@@ -20,22 +20,98 @@ footer: Holly & Andy
 #   - title: facebook
 #     url: https://facebook.com
 
-page-sections:
-    # - name: register
-    #   menu: false
-    #   title: Address Book
-    - name: accommodation
-      menu: true
-      title: Accommodation
-    - name: how_long
-      menu: true
-      title: How Long?
-    - name: contact
-      menu: true
-      title: contact us
-    - name: map
-      menu: true
-      title: Where?
+# page-sections:
+#     # - name: register
+#     #   menu: false
+#     #   title: Address Book
+#     - name: accommodation
+#       menu: true
+#       title: Accommodation
+#     - name: how_long
+#       menu: true
+#       title: How Long?
+#     - name: contact
+#       menu: true
+#       title: contact us
+#     - name: map
+#       menu: true
+#       title: Where?
+#
+
+site-map:
+    home:
+        title: home
+        sections:
+            - about
+            - how_long
+            - contact
+            - map
+        menu:
+            - the-day
+            - accommodation
+            - rsvp
+            - giftlist
+    about:
+        title: Welcome!
+    how_long:
+        title: How Long?
+    contact:
+        title: Contact Us
+    map:
+        title: Where?
+    ceremony:
+        title: Ceremony
+        menu:
+            - home
+            - the-day
+            - accommodation
+            - rsvp
+            - giftlist
+    reception:
+        title: Reception
+        menu:
+            - home
+            - the-day
+            - accommodation
+            - rsvp
+            - giftlist
+    the-day:
+        title: The Big Day
+        submenu:
+            - ceremony
+            - reception
+        menu:
+            - home
+            - the-day
+            - accommodation
+            - rsvp
+            - giftlist
+    accommodation:
+        title: Accommodation
+        menu:
+            - home
+            - the-day
+            - accommodation
+            - rsvp
+            - giftlist
+    rsvp:
+        title: RSVP
+        menu:
+            - home
+            - the-day
+            - accommodation
+            - rsvp
+            - giftlist
+    giftlist:
+        title: Gift List
+        menu:
+            - home
+            - the-day
+            - accommodation
+            - rsvp
+            - giftlist
+
+
 
 # Build settings
 markdown: kramdown

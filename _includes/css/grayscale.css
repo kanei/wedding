@@ -111,6 +111,28 @@ a:focus {
     background-color: rgba(255,255,255,.3);
 }
 
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-toggle:hover + .dropdown-menu, .dropdown-menu:hover {
+    display: block;
+}
+
+.dropdown-menu {
+    background-color: transparent;
+    min-width: 50px;
+    border-radius: 0px;
+    border: 0px;
+    box-shadow: none;
+    width: 100%;
+}
+
+.dropdown-menu>li>a {
+    color: #fcfcfc;
+    padding: 15px;
+}
+
 @media(min-width:993px) {
     .navbar {
         padding: 20px 0;

@@ -7,14 +7,14 @@
     ```
     ---
     layout: content
-    name: <name of sections>
+    key: <name of sections>
     ---
     ```
 
 * Add a hash to the `sections` in `_config.yml` like so:
 
     ```
-    - name: <name of section # should match the above file>
+    - key: <name of section # should match the above file>
       menu: <true|false> # should this section appear in the top menu?
       title: <nice name for the section>
     ```

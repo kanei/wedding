@@ -1,6 +1,6 @@
 ---
 layout: content
-name: contact
+key: contact
 ---
 ## Contact Us
 

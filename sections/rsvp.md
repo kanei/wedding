@@ -1,7 +1,8 @@
 ---
 layout: content
-key: register
+key: rsvp
 ---
+
 
 ## We need your contact details!
 
