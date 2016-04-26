@@ -1,15 +1,18 @@
     <!-- Intro Header -->
-    <header class="intro">
+    <header class="intro intro-{{ page.key }}">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">06 . 08 . 2016</h1>
-                        <p class="sub-head">Save the Date</p>
-                        <p class="intro-text">Holly Phillips & Andrew Miller</p>
-                        <a href="#{{ site.site-map["home"].sections[0] }}" class="btn btn-circle page-scroll">
+
+                        <h1 class="brand-heading">{{ site.site-map[page.key].header.title }}</h1>
+                        <p class="sub-head">{{ site.site-map[page.key].header.subtitle }}</p>
+                        <p class="intro-text">{{ site.site-map[page.key].header.subsubtitle }}</p>
+                        {% if site.site-map[page.key] == "home" %}
+                        <a href="#{{ site.site-map[page.key].sections[0] }}" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

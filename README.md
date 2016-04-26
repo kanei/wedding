@@ -18,3 +18,6 @@
       menu: <true|false> # should this section appear in the top menu?
       title: <nice name for the section>
     ```
+
+
+letsencrypt certonly --webroot -w /usr/share/nginx/html/hlwedding/master/ -d hlwedding.akmiller.co.uk

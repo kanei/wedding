@@ -13,6 +13,7 @@ color:
 # Footer settings
 footer: Holly & Andy
 
+
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 # social:
 #   - title: twitter
@@ -40,6 +41,10 @@ footer: Holly & Andy
 
 site-map:
     home:
+        header:
+          title: 06 . 08 . 2016
+          subtitle: Save the Date
+          subsubtitle: Holly Phillips & Andrew Miller
         title: home
         sections:
             - about
@@ -60,6 +65,10 @@ site-map:
     map:
         title: Where?
     ceremony:
+        header:
+          title: Ceremony
+          subtitle: "&nbsp;"
+          subsubtitle: "&nbsp;"
         title: Ceremony
         menu:
             - home

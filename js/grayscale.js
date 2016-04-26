@@ -53,9 +53,9 @@ function update() {
 
 // Google Maps Scripts
 // When the window has finished loading create our google map below
-google.maps.event.addDomListener(window, 'load', init);
+google.maps.event.addDomListener(window, 'load', inithome);
 
-function init() {
+function inithome() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     if (window.screen.availWidth <= 1024) {
@@ -294,9 +294,13 @@ function init() {
 
     // Create the Google Map using out element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
+    downingmarker(map, autoOpen);
+    c3marker(map, autoOpen);
+    update();
+}
 
+function downingmarker(map, autoOpen) {
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
-    var image = 'img/map-marker2.png';
     var downinginfo = '<strong>What:</strong> Reception & Evening Entertainment <br/>\
                         <strong>Where:</strong> Downing College on Regent Street.';
 
@@ -304,7 +308,6 @@ function init() {
     var downingMarker = new google.maps.Marker({
         position: downingLatLng,
         map: map,
-        // icon: image
     });
     var downingInfoWindow = new google.maps.InfoWindow({
         content: downinginfo,
@@ -317,7 +320,9 @@ function init() {
     google.maps.event.addListener(downingMarker, 'click', function() {
         downingInfoWindow.open(map, downingMarker);
     });
+}
 
+function c3marker(map, autoOpen) {
     // var c3info = 'Ceremony @ New C3 Centre <br/>on Coldhams Lane';
     var c3info = '<strong>What:</strong> Wedding Ceremony <br/>\
     <strong>Where:</strong> New C3 Centre on Coldhams Lane';
@@ -325,7 +330,6 @@ function init() {
     var c3Marker = new google.maps.Marker({
         position: c3LatLng,
         map: map,
-        // icon: image
     });
     var c3InfoWindow = new google.maps.InfoWindow({
         content: c3info,
@@ -339,10 +343,6 @@ function init() {
     google.maps.event.addListener(c3Marker, 'click', function() {
         c3InfoWindow.open(map, c3Marker);
     });
-
-
-
-    update();
 }
 
 
