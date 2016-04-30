@@ -196,6 +196,10 @@ a:focus {
     background: url(/img/watercolour.png) no-repeat top center / cover scroll;
 }
 
+.intro-rsvp {
+    background: url(/img/invite.jpg) no-repeat top center / cover scroll;
+}
+
 
 .intro .intro-body {
     /*font-family: 'Marck Script', cursive;*/
