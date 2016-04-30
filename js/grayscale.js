@@ -4,6 +4,210 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+var mapStyles = [
+{
+"featureType": "administrative",
+"elementType": "labels.text.fill",
+"stylers": [
+    {
+        "color": "#444444"
+    }
+]
+},
+{
+"featureType": "landscape",
+"elementType": "all",
+"stylers": [
+    {
+        "color": "#f2f2f2"
+    }
+]
+},
+{
+"featureType": "landscape",
+"elementType": "geometry.fill",
+"stylers": [
+    {
+        "visibility": "on"
+    }
+]
+},
+{
+"featureType": "landscape.man_made",
+"elementType": "geometry.fill",
+"stylers": [
+    {
+        "hue": "#ffd100"
+    },
+    {
+        "saturation": "44"
+    }
+]
+},
+{
+"featureType": "landscape.man_made",
+"elementType": "geometry.stroke",
+"stylers": [
+    {
+        "saturation": "-1"
+    },
+    {
+        "hue": "#ff0000"
+    }
+]
+},
+{
+"featureType": "landscape.natural",
+"elementType": "geometry",
+"stylers": [
+    {
+        "saturation": "-16"
+    }
+]
+},
+{
+"featureType": "landscape.natural",
+"elementType": "geometry.fill",
+"stylers": [
+    {
+        "hue": "#ffd100"
+    },
+    {
+        "saturation": "44"
+    }
+]
+},
+{
+"featureType": "poi",
+"elementType": "all",
+"stylers": [
+    {
+        "visibility": "off"
+    }
+]
+},
+{
+"featureType": "road",
+"elementType": "all",
+"stylers": [
+    {
+        "saturation": "-30"
+    },
+    {
+        "lightness": "12"
+    },
+    {
+        "hue": "#ff8e00"
+    }
+]
+},
+{
+"featureType": "road.highway",
+"elementType": "all",
+"stylers": [
+    {
+        "visibility": "simplified"
+    },
+    {
+        "saturation": "-26"
+    }
+]
+},
+{
+"featureType": "road.arterial",
+"elementType": "labels.icon",
+"stylers": [
+    {
+        "visibility": "off"
+    }
+]
+},
+{
+"featureType": "transit",
+"elementType": "all",
+"stylers": [
+    {
+        "visibility": "off"
+    }
+]
+},
+{
+"featureType": "water",
+"elementType": "all",
+"stylers": [
+    {
+        "color": "#c0b78d"
+    },
+    {
+        "visibility": "on"
+    },
+    {
+        "saturation": "4"
+    },
+    {
+        "lightness": "40"
+    }
+]
+},
+{
+"featureType": "water",
+"elementType": "geometry",
+"stylers": [
+    {
+        "hue": "#ffe300"
+    }
+]
+},
+{
+"featureType": "water",
+"elementType": "geometry.fill",
+"stylers": [
+    {
+        "hue": "#ffe300"
+    },
+    {
+        "saturation": "-3"
+    },
+    {
+        "lightness": "-10"
+    }
+]
+},
+{
+"featureType": "water",
+"elementType": "labels",
+"stylers": [
+    {
+        "hue": "#ff0000"
+    },
+    {
+        "saturation": "-100"
+    },
+    {
+        "lightness": "-5"
+    }
+]
+},
+{
+"featureType": "water",
+"elementType": "labels.text.fill",
+"stylers": [
+    {
+        "visibility": "off"
+    }
+]
+},
+{
+"featureType": "water",
+"elementType": "labels.text.stroke",
+"stylers": [
+    {
+        "visibility": "off"
+    }
+]
+}
+]
+
 // jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
     nav_collapse()
@@ -53,7 +257,17 @@ function update() {
 
 // Google Maps Scripts
 // When the window has finished loading create our google map below
-google.maps.event.addDomListener(window, 'load', inithome);
+google.maps.event.addDomListener(window, 'load', function() {
+    var path = window.location.pathname;
+    if (path === '/') {
+        inithome()
+    } else if (path === '/sections/ceremony/') {
+        initceremony()
+    } else if (path === '/sections/reception/') {
+        initreception()
+    }
+});
+
 
 function inithome() {
     // Basic options for a simple Google Map
@@ -73,7 +287,7 @@ function inithome() {
         minZoom: zoom,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(52.2006602, 0.14), // New York
+        center: new google.maps.LatLng(52.2006602, 0.14),
 
         // Disables the default Google Maps UI components
         disableDefaultUI: true,
@@ -82,209 +296,7 @@ function inithome() {
 
         // How you would like to style the map.
         // This is where you would paste any style found on Snazzy Maps.
-        styles: [
-    {
-        "featureType": "administrative",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#444444"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#f2f2f2"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "hue": "#ffd100"
-            },
-            {
-                "saturation": "44"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "saturation": "-1"
-            },
-            {
-                "hue": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.natural",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "saturation": "-16"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.natural",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "hue": "#ffd100"
-            },
-            {
-                "saturation": "44"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "all",
-        "stylers": [
-            {
-                "saturation": "-30"
-            },
-            {
-                "lightness": "12"
-            },
-            {
-                "hue": "#ff8e00"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "saturation": "-26"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#c0b78d"
-            },
-            {
-                "visibility": "on"
-            },
-            {
-                "saturation": "4"
-            },
-            {
-                "lightness": "40"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "hue": "#ffe300"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "hue": "#ffe300"
-            },
-            {
-                "saturation": "-3"
-            },
-            {
-                "lightness": "-10"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "hue": "#ff0000"
-            },
-            {
-                "saturation": "-100"
-            },
-            {
-                "lightness": "-5"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    }
-]
+        styles: mapStyles
 
     };
 
@@ -297,6 +309,72 @@ function inithome() {
     downingmarker(map, autoOpen);
     c3marker(map, autoOpen);
     update();
+}
+
+function initceremony() {
+    var mapOptions = {
+        // How zoomed in you want the map to start at (always required)
+        // zoom: 15,
+        zoom: 14,
+        minZoom: 13,
+        // The latitude and longitude to center the map (always required)
+        center: new google.maps.LatLng(52.200594, 0.156914),
+
+        // Disables the default Google Maps UI components
+        disableDefaultUI: false,
+        scrollwheel: true,
+        draggable: true,
+
+        // How you would like to style the map.
+        // This is where you would paste any style found on Snazzy Maps.
+        styles: mapStyles
+
+    };
+
+    // Get the HTML DOM element that will contain your map
+    // We are using a div with id="map" seen below in the <body>
+    var mapElement = document.getElementById('c3map');
+    var map = new google.maps.Map(mapElement, mapOptions);
+    c3marker(map, true);
+    // TODO: add parking markers
+
+}
+
+function initreception() {
+    var mapOptions = {
+        // How zoomed in you want the map to start at (always required)
+        // zoom: 15,
+        zoom: 15,
+        minZoom: 13,
+        // The latitude and longitude to center the map (always required)
+        center: new google.maps.LatLng(52.201469, 0.125178),
+
+        // Disables the default Google Maps UI components
+        disableDefaultUI: false,
+        scrollwheel: true,
+        draggable: true,
+
+        // How you would like to style the map.
+        // This is where you would paste any style found on Snazzy Maps.
+        styles: mapStyles
+
+    };
+
+    // Get the HTML DOM element that will contain your map
+    // We are using a div with id="map" seen below in the <body>
+    var mapElement = document.getElementById('downingmap');
+    var map = new google.maps.Map(mapElement, mapOptions);
+    var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('downingpano'), {
+              position:new google.maps.LatLng(52.201469, 0.125178),
+              pov: {
+                heading: 240,
+                pitch: -10
+              }
+            });
+        map.setStreetView(panorama);
+    downingmarker(map, true);
+    // TODO: add parking markers
 }
 
 function downingmarker(map, autoOpen) {

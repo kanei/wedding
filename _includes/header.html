@@ -3,13 +3,20 @@
         <div class="intro-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-{{ page.header.width|default:8 }} col-md-offset-{{ page.header.offset|default:2 }}">
 
-                        <h1 class="brand-heading">{{ site.site-map[page.key].header.title }}</h1>
+                        <!--<h1 class="brand-heading">{{ site.site-map[page.key].header.title }}</h1>
                         <p class="sub-head">{{ site.site-map[page.key].header.subtitle }}</p>
-                        <p class="intro-text">{{ site.site-map[page.key].header.subsubtitle }}</p>
-                        {% if site.site-map[page.key] == "home" %}
+                        <p class="intro-text">{{ site.site-map[page.key].header.subsubtitle }}</p>-->
+                        <h1 class="brand-heading">{{ page.header.title }}</h1>
+                        <p class="sub-head">{{ page.header.subtitle }}</p>
+                        <p class="intro-text">{{ page.header.subsubtitle }}</p>
+                        {% if page.key == "home" %}
                         <a href="#{{ site.site-map[page.key].sections[0] }}" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                        {% elsif page.layout == "detail" %}
+                        <a href="#anchor" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                         {% endif %}

@@ -1,6 +1,10 @@
 ---
-layout: content
+layout: detail
 key: accommodation
+header:
+  title: Accommodation
+  offset: 1
+  width: 10
 ---
 # Accommodation Options in Cambridge
 
