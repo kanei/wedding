@@ -255,6 +255,46 @@ function update() {
     requestAnimationFrame(update, counter.parentNode);
 }
 
+// Create a clone of the menu, right next to original.
+$('#bunting').addClass('original')
+          .clone()
+          .insertAfter('#bunting')
+          .addClass('cloned')
+          .css('position','fixed')
+          .css('top','0')
+          .css('margin-top','0')
+          .css('z-index','500')
+          .removeClass('original').hide();
+
+scrollIntervalID = setInterval(stickIt, 10);
+
+
+function stickIt() {
+    if ($('.original').length) {
+      var orgElementPos = $('.original').offset();
+      var navPos = $('nav').offset()
+      var navHeight = $('nav').height()
+      orgElementTop = orgElementPos.top - navHeight;
+
+      if ($(window).scrollTop() >= (orgElementTop)) {
+        // scrolled past the original position; now only show the cloned, sticky element.
+
+        // Cloned element should always have same left position and width as original element.
+        orgElement = $('.original');
+        coordsOrgElement = orgElement.offset();
+        leftOrgElement = coordsOrgElement.left;
+        widthOrgElement = orgElement.css('width');
+        $('.cloned').css('left',leftOrgElement+'px').css('top',navHeight).css('width',widthOrgElement).show();
+        $('.original').css('visibility','hidden');
+      } else {
+        // not scrolled past the menu; only show the original menu.
+        $('.cloned').hide();
+        $('.original').css('visibility','visible');
+      }
+    }
+}
+
+
 // Google Maps Scripts
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', function() {
@@ -265,6 +305,8 @@ google.maps.event.addDomListener(window, 'load', function() {
         initceremony()
     } else if (path === '/sections/reception/') {
         initreception()
+    } else if (path === '/rsvp/') {
+        initrsvp()
     }
 });
 
@@ -424,41 +466,19 @@ function c3marker(map, autoOpen) {
 }
 
 
-// Create a clone of the menu, right next to original.
-$('#bunting').addClass('original')
-          .clone()
-          .insertAfter('#bunting')
-          .addClass('cloned')
-          .css('position','fixed')
-          .css('top','0')
-          .css('margin-top','0')
-          .css('z-index','500')
-          .removeClass('original').hide();
-
-scrollIntervalID = setInterval(stickIt, 10);
-
-
-function stickIt() {
-    if ($('.original').length) {
-      var orgElementPos = $('.original').offset();
-      var navPos = $('nav').offset()
-      var navHeight = $('nav').height()
-      orgElementTop = orgElementPos.top - navHeight;
-
-      if ($(window).scrollTop() >= (orgElementTop)) {
-        // scrolled past the original position; now only show the cloned, sticky element.
-
-        // Cloned element should always have same left position and width as original element.
-        orgElement = $('.original');
-        coordsOrgElement = orgElement.offset();
-        leftOrgElement = coordsOrgElement.left;
-        widthOrgElement = orgElement.css('width');
-        $('.cloned').css('left',leftOrgElement+'px').css('top',navHeight).css('width',widthOrgElement).show();
-        $('.original').css('visibility','hidden');
-      } else {
-        // not scrolled past the menu; only show the original menu.
-        $('.cloned').hide();
-        $('.original').css('visibility','visible');
-      }
-    }
+function initrsvp() {
+    $("#submit").click(function() {
+        $.ajax('/secure/', {
+            username: 'rsvp',
+            password: $('#password').val(),
+            success: function(data) {
+                console.log(data)
+                $("#viparea").html(data);
+                $("#passform").hide();
+            },
+            error: function() {
+                $("#span").text('Incorrect password!')
+            }
+        });
+    });
 }

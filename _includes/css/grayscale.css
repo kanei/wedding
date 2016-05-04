@@ -128,6 +128,7 @@ a:focus {
     box-shadow: none;
     width: 100%;
     padding: 0;
+    text-align: center;
 }
 
 .dropdown-menu>li>a {
@@ -595,4 +596,8 @@ table {
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.error {
+    color: #af0000;
 }

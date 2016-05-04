@@ -105,6 +105,7 @@ site-map:
             - giftlist
     rsvp:
         title: RSVP
+        path: rsvp
         menu:
             - home
             - the-day
