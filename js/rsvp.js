@@ -111,16 +111,16 @@ var GuestRSVP = React.createClass({
                 </div>
                 <div className="form-group">
                     <label for="menu" className="col-sm-5 control-label">We have two wedding breakfast menus, one for meat eaters and the other for vegetarians, which menu would you like?</label>
-                    <div className="col-sm-5 text-left" id="menu">
+                    <div className="col-xs-offset-4 col-sm-offset-0 col-sm-5 text-left" id="menu">
                         <div className="radio">
                             <label for="standard" >
-                                <input type="radio" name={this.props.index} onChange={this.handleChange} ref="menuChoiceInput" />
+                                <input type="radio" name={this.props.index} onChange={this.handleChange} ref="menuChoiceInput" required />
                                 Standard Menu
                             </label>
                         </div>
                         <div className="radio">
                             <label for="vegetarian">
-                                <input type="radio" name={this.props.index} onChange={this.handleChange} ref="menuChoiceInput" />
+                                <input type="radio" name={this.props.index} onChange={this.handleChange} ref="menuChoiceInput" required />
                                 Vegetarian Menu
                             </label>
                         </div>
@@ -192,13 +192,44 @@ var ConfirmationEmail = React.createClass({
     }
 })
 
+var Taxi = React.createClass({
+    handleChange: function(e) {
+        if (this.refs.taxiInput.checked) {
+            var taxi = 'Yes'
+        } else {
+            var taxi = 'No'
+        }
+        this.props.handleTaxi(taxi)
+    },
+    render: function() {
+        return (
+            <div className="form-group">
+                <label for="menu" className="col-sm-5 control-label">We will book a fleet of taxis from the ceremony to Downing College for those who would like one. Would you like to be included?</label>
+                <div className="col-xs-offset-4 col-sm-offset-0 col-sm-5 text-left" id="menu">
+                    <div className="radio">
+                        <label for="yes" >
+                            <input type="radio" name="taxi" onChange={this.handleChange} ref="taxiInput" />
+                            Yes please!
+                        </label>
+                    </div>
+                    <div className="radio">
+                        <label for="no">
+                            <input type="radio" name="taxi" onChange={this.handleChange} ref="taxiInput" />
+                            No, thank you!
+                        </label>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+})
 
 
 var _guest = {
     dietRequirements: '',
     firstName: '',
     lastName: '',
-    menuChoice: ''
+    menuChoice: null
 }
 
 var RSVPForm = React.createClass({
@@ -207,7 +238,8 @@ var RSVPForm = React.createClass({
             guests: [_guest],
             song: '',
             guestCount: 1,
-            email: ''
+            email: '',
+            taxi: ''
         };
     },
     handleSubmit: function(e) {
@@ -217,12 +249,20 @@ var RSVPForm = React.createClass({
         var submit_data = this.state.guests
         submit_data[0].song = this.state.song
         submit_data[0].email = this.state.email
+        submit_data[0].taxi = this.state.taxi
         submit_data.reverse().map(function(data) {
-            console.log(data)
             $.post(webhook, data)
         })
+        var self = this;
         $.post(email_webhook, this.state, function(resp) {
             console.log('Email sent');
+            self.setState({
+                guests: [_guest],
+                song: '',
+                guestCount: 1,
+                email: '',
+                taxi: null
+            })
         })
 
     },
@@ -242,6 +282,9 @@ var RSVPForm = React.createClass({
     },
     handleEmail: function(value) {
         this.setState({email:value})
+    },
+    handleTaxi: function(value) {
+        this.setState({taxi:value})
     },
     handleGuestCount: function(value) {
         var guestCount = Number(value)
@@ -275,6 +318,7 @@ var RSVPForm = React.createClass({
                 {other_guests}
               </div>
               <SongRequest song={this.state.song} handleSong={this.handleSong} />
+              <Taxi song={this.state.taxi} handleTaxi={this.handleTaxi} />
               <ConfirmationEmail email={this.state.email} handleEmail={this.handleEmail} />
               <div className="form-group">
                   <div className="col-sm-offset-4 col-sm-4">
