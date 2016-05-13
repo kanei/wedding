@@ -297,7 +297,9 @@ function stickIt() {
 
 // Google Maps Scripts
 // When the window has finished loading create our google map below
-google.maps.event.addDomListener(window, 'load', function() {
+// google.maps.event.addDomListener(window, 'load', init);
+
+function init() {
     var path = window.location.pathname;
     if (path === '/') {
         inithome()
@@ -305,10 +307,10 @@ google.maps.event.addDomListener(window, 'load', function() {
         initceremony()
     } else if (path === '/sections/reception/') {
         initreception()
-    } else if (path === '/rsvp/') {
-        initrsvp()
-    }
-});
+    } // else if (path === '/rsvp/') {
+        // initrsvp()
+    // }
+};
 
 
 function inithome() {
@@ -462,23 +464,5 @@ function c3marker(map, autoOpen) {
 
     google.maps.event.addListener(c3Marker, 'click', function() {
         c3InfoWindow.open(map, c3Marker);
-    });
-}
-
-
-function initrsvp() {
-    $("#submit").click(function() {
-        $.ajax('/secure/', {
-            username: 'rsvp',
-            password: $('#password').val(),
-            success: function(data) {
-                console.log(data)
-                $("#viparea").html(data);
-                $("#passform").hide();
-            },
-            error: function() {
-                $("#span").text('Incorrect password!')
-            }
-        });
     });
 }

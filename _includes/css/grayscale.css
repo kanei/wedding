@@ -95,7 +95,7 @@ a:focus {
 }
 
 .navbar-custom .nav li.active {
-    outline: nonte;
+    outline: none;
     background-color: rgba(255,255,255,.3);
 }
 
@@ -157,7 +157,6 @@ a:focus {
         background-color: {{ site.color.primary-dark }};
     }
 
-
     .navbar-custom a {
         color: #fcfcfc;
     }
@@ -165,6 +164,7 @@ a:focus {
     .navbar-custom.top-nav-collapse {
         border-bottom: 1px solid rgba(0,0,0,.3);
     }
+
     .navbar-custom.top-nav-collapse a {
         color: #0c0c0c;
     }
@@ -185,7 +185,7 @@ a:focus {
 }
 
 .intro-ceremony {
-    background: url(/img/c3.png) no-repeat top center / cover scroll;
+    background: url(/img/c3-min.png) no-repeat top center / cover scroll;
     color: #fcfcfc;
 }
 
@@ -600,4 +600,28 @@ table {
 
 .error {
     color: #af0000;
+}
+
+.subnavbar {
+    color: #0c0c0c;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin-bottom: 30px;
+}
+
+.subnavbar a {
+    color: #0c0c0c;
+}
+
+.subnavbar a:hover, .subnavbar a:focus  {
+    background-color: rgba(255,255,255,.3) !important;
+    outline: 0;
+}
+
+
+.form-extra-padding {
+    padding-top: 7px;
+}
+
+#viparea {
+    display: none;
 }
