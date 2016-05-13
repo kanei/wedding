@@ -6,6 +6,9 @@ header:
 bunting: false
 ---
 
+To RSVP to the evening or ceremony please drop an email to <a href="mailto:rsvp@hollyandandrew.co.uk">rsvp@hollyandandrew.co.uk</a>.
+
+For the wedding breakfast find the password on your invite!
 
 <form class="form-horizontal" id="passform">
   <div class="form-group">
