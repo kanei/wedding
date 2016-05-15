@@ -350,7 +350,7 @@ function load_rsvp_subpage(subpage) {
         success: function(data) {
             $("#viparea").html(data);
             $("#passform").hide();
-            $("#rsvp p").hide();
+            $(".rsvpindex").hide();
             $("#viparea").show();
             var form = document.getElementById('rsvp-form');
             if (form !== null) {
