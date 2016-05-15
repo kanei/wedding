@@ -8,6 +8,8 @@ header:
 
 The wedding breakfast and evening reception are at Downing College, which was Holly’s college during her PhD studies.  At the evening reception, we will have a live band to dance the night away!
 
+Children are very welcome to attend the ceremony and evening party but the Wedding Breakfast is an adults-only affair, with the exception to those travelling to Cambridge.
+
 <div class="row">
 <div class="col-xs-12 col-md-7">
 
