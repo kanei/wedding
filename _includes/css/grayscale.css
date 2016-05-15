@@ -622,6 +622,7 @@ table {
     padding-top: 7px;
 }
 
-#viparea {
+#viparea,
+#rsvpsuccess {
     display: none;
 }

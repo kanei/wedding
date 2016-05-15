@@ -263,6 +263,12 @@ var RSVPForm = React.createClass({
                 email: '',
                 taxi: null
             })
+            $("#rsvpsuccess").show()
+            $("#rsvpsubmitform").hide()
+            setTimeout(function() {
+                $("#rsvpsuccess").hide()
+                $("#rsvpsubmitform").show()
+            }, 5000)
         })
 
     },
@@ -321,8 +327,14 @@ var RSVPForm = React.createClass({
               <Taxi song={this.state.taxi} handleTaxi={this.handleTaxi} />
               <ConfirmationEmail email={this.state.email} handleEmail={this.handleEmail} />
               <div className="form-group">
-                  <div className="col-sm-offset-4 col-sm-4">
+                  <div id="rsvpsubmitform" className="col-sm-offset-4 col-sm-4">
                     <input type="submit" className="form-control" id="rsvp-submit" value="Submit"/>
+                  </div>
+                  <div className="clearfix"></div>
+                  <div id="rsvpsuccess" className="col-sm-offset-3 col-sm-6">
+                    <div className="alert alert-success" role="alert">
+                    Your RSVP was submitted successfully!
+                    </div>
                   </div>
               </div>
            </form>
@@ -334,6 +346,12 @@ var RSVPForm = React.createClass({
 
 
 function initrsvp() {
+    $('#password').keypress(function (e) {
+      if (e.which == 13) {
+        load_rsvp_subpage('form')
+        return false;    //<---- Add this line
+      }
+    });
     $("#submit").click(function() {
         load_rsvp_subpage('form')
     });
