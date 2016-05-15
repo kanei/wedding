@@ -17,12 +17,12 @@ The wedding breakfast and evening reception are at Downing College, which was Ho
   <dt>Address</dt>
   <dd>Downing College, Regent St, Cambridge CB2 1DQ</dd>
   <dt>Website</dt>
-  <dd><a href="www.dow.cam.ac.uk">www.dow.cam.ac.uk</a></dd>
+  <dd><a href="http://www.dow.cam.ac.uk">www.dow.cam.ac.uk</a></dd>
   <dt>Evening food and drink</dt>
   <dd>There will be light nibbles of cheese, cake &amp; more cake, plus a cash bar for drinks.
   </dd>
   <dt>Parking</dt>
-  <dd>For the wedding party and guests staying at Downing College there is parking on site. We would recommend <a href="www.cambridge.gov.uk/queen-anne-terrace-car-park">Queen Anne Terrace car park</a> for all other guests. It is a 7 minute walk to the entrance of Downing College.
+  <dd>For the wedding party and guests staying at Downing College there is parking on site. We would recommend <a href="http://www.cambridge.gov.uk/queen-anne-terrace-car-park">Queen Anne Terrace car park</a> for all other guests. It is a 7 minute walk to the entrance of Downing College.
   There is also cycle parking within Downing College.</dd>
   </dl>
 </div>
