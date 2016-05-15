@@ -195,9 +195,9 @@ var ConfirmationEmail = React.createClass({
 var Taxi = React.createClass({
     handleChange: function(e) {
         if (this.refs.taxiInput.checked) {
-            var taxi = 'Yes'
-        } else {
             var taxi = 'No'
+        } else {
+            var taxi = 'Yes'
         }
         this.props.handleTaxi(taxi)
     },
@@ -239,7 +239,7 @@ var RSVPForm = React.createClass({
             song: '',
             guestCount: 1,
             email: '',
-            taxi: ''
+            taxi: 'No'
         };
     },
     handleSubmit: function(e) {
@@ -350,6 +350,7 @@ function load_rsvp_subpage(subpage) {
         success: function(data) {
             $("#viparea").html(data);
             $("#passform").hide();
+            $("#rsvp p").hide();
             $("#viparea").show();
             var form = document.getElementById('rsvp-form');
             if (form !== null) {
