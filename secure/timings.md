@@ -5,6 +5,8 @@ key: timings
 
 # Timings for the day
 
+<!--**11:45am:** Doors open -->
+
 **12:30pm:** Andrew sees Holly for the first time (Ceremony starts)
 
 **2pm:** Reception drinks, canapes & photos
