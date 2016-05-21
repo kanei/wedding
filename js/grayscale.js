@@ -237,9 +237,9 @@ $(function() {
 });
 
 // Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
-});
+// $('.navbar-collapse ul li a').click(function() {
+//     $('.navbar-toggle:visible').click();
+// });
 
 function update() {
     var units = countdown.YEARS | countdown.MONTHS | countdown.WEEKS | countdown.DAYS;

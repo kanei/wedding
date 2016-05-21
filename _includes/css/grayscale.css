@@ -116,8 +116,9 @@ a:focus {
     cursor: pointer;
 }
 
-.dropdown-toggle:hover + .dropdown-menu, .dropdown-menu:hover {
-    display: block;
+.dropdown-toggle + .dropdown-menu {
+    /*display: block;*/
+    padding: 0;
 }
 
 .dropdown-menu {
@@ -127,19 +128,20 @@ a:focus {
     border: 0px;
     box-shadow: none;
     width: 100%;
-    padding: 0;
-    text-align: center;
+    /*padding: 0;*/
+    /*text-align: center;*/
 }
 
 .dropdown-menu>li>a {
-    color: #fcfcfc;
-    padding: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .dropdown-menu>li>a:hover {
     background-color: {{ site.color.primary-dark }};
     /*border-bottom: 1px solid rgba(0,0,0,.3);*/
 }
+
 
 @media(min-width:993px) {
     .navbar {
@@ -168,6 +170,32 @@ a:focus {
     .navbar-custom.top-nav-collapse a {
         color: #0c0c0c;
     }
+
+    .dropdown-toggle:hover + .dropdown-menu, .dropdown-menu:hover {
+        display: block;
+    }
+
+    .dropdown-menu {
+        background-color: transparent;
+        min-width: 50px;
+        border-radius: 0px;
+        border: 0px;
+        box-shadow: none;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .dropdown-menu>li>a {
+        color: #fcfcfc;
+        padding: 15px;
+    }
+
+    .dropdown-menu>li>a:hover {
+        background-color: {{ site.color.primary-dark }};
+        /*border-bottom: 1px solid rgba(0,0,0,.3);*/
+    }
+
 }
 
 .intro {
@@ -596,6 +624,7 @@ table {
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 .error {
@@ -606,17 +635,25 @@ table {
     color: #0c0c0c;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     margin-bottom: 30px;
+    border-bottom: 1px solid #0c0c0c;
 }
 
 .subnavbar a {
     color: #0c0c0c;
 }
 
-.subnavbar a:hover, .subnavbar a:focus  {
+.subnavbar a:hover,
+.subnavbar a:focus,
+.submenuactive  {
     background-color: rgba(255,255,255,.3) !important;
     outline: 0;
 }
 
+.sub-anchor {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+}
 
 .form-extra-padding {
     padding-top: 7px;

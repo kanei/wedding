@@ -111,7 +111,7 @@ var GuestRSVP = React.createClass({
                 </div>
                 <div className="form-group">
                     <label for="menu" className="col-sm-5 control-label">We have two wedding breakfast menus, one for meat eaters and the other for vegetarians, which menu would you like?</label>
-                    <div className="col-xs-offset-4 col-sm-offset-0 col-sm-5 text-left" id="menu">
+                    <div className="col-xs-offset-4 col-sm-offset-0 col-sm-5 text-left" id="menuchoice">
                         <div className="radio">
                             <label for="standard" >
                                 <input type="radio" name={this.props.index} onChange={this.handleChange} ref="menuChoiceInput" required />
@@ -205,7 +205,7 @@ var Taxi = React.createClass({
         return (
             <div className="form-group">
                 <label for="menu" className="col-sm-5 control-label">We will book a fleet of taxis from the ceremony to Downing College for those who would like one. Would you like to be included?</label>
-                <div className="col-xs-offset-4 col-sm-offset-0 col-sm-5 text-left" id="menu">
+                <div className="col-xs-offset-4 col-sm-offset-0 col-sm-5 text-left" id="taxichoice">
                     <div className="radio">
                         <label for="yes" >
                             <input type="radio" name="taxi" onChange={this.handleChange} ref="taxiInput" />
@@ -370,6 +370,7 @@ function load_rsvp_subpage(subpage) {
             $("#passform").hide();
             $(".rsvpindex").hide();
             $("#viparea").show();
+            $('.subnavbar #sub' + subpage).addClass('submenuactive')
             var form = document.getElementById('rsvp-form');
             if (form !== null) {
                 ReactDOM.render(
@@ -377,6 +378,12 @@ function load_rsvp_subpage(subpage) {
                   form
                 );
             }
+            $('.subnavbar li a').each(function(i, element) {
+                var e = element;
+                $(element).on('click', function() {
+                    load_rsvp_subpage($(element).prop('href').split("#")[1])
+                })
+            })
         },
         error: function() {
             $("#error").text('Incorrect password!')
