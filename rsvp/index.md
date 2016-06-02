@@ -11,7 +11,7 @@ bunting: false
 </p>
 
 <p class="rsvpindex">
-  For the wedding breakfast find the password on your invite!
+  If you have an invite to the wedding breakfast, please find the password on your invite and login here. There is no need to email as we'll assume you are also coming to the ceremony and evening party
 </p>
 
 <form class="form-horizontal" id="passform">
