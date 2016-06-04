@@ -12,6 +12,8 @@ Children are very welcome to attend the ceremony and evening party but the Weddi
 
 The dress code is formal &amp; extra victory points will be awarded for hats or for adding your own flair.
 
+For those that have time between the Ceremony & Evening party, there is plenty to explore in Cambridge. We have compiled a small list [here](/sections/todocambridge) to help you out.
+
 <div class="row">
 <div class="col-xs-12 col-md-7">
 

@@ -221,7 +221,9 @@ a:focus {
     background: url(/img/downing-colour.png) no-repeat top center / cover scroll;
 }
 
-.intro-accommodation {
+.intro-accommodation,
+.intro-todocambridge,
+.intro-faq {
     background: url(/img/watercolour.png) no-repeat top center / cover scroll;
 }
 
@@ -570,6 +572,11 @@ table {
 
 .detail-section a img {
     border: solid #0c0c0c 1px;
+}
+
+.detail-section ul {
+    margin-bottom: 20px;
+    margin-top: -25px;
 }
 
 .detail-section #map {

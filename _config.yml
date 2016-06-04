@@ -56,6 +56,7 @@ site-map:
             - accommodation
             - rsvp
             - giftlist
+            - faq
     about:
         title: Welcome!
     how_long:
@@ -76,6 +77,7 @@ site-map:
             - accommodation
             - rsvp
             - giftlist
+            - faq
     reception:
         title: Evening
         menu:
@@ -84,6 +86,7 @@ site-map:
             - accommodation
             - rsvp
             - giftlist
+            - faq
     the-day:
         title: The Big Day
         submenu:
@@ -95,6 +98,7 @@ site-map:
             - accommodation
             - rsvp
             - giftlist
+            - faq
     accommodation:
         title: Accommodation
         menu:
@@ -103,6 +107,7 @@ site-map:
             - accommodation
             - rsvp
             - giftlist
+            - faq
     rsvp:
         title: RSVP
         path: rsvp
@@ -112,8 +117,27 @@ site-map:
             - accommodation
             - rsvp
             - giftlist
+            - faq
     giftlist:
         title: Gift List
+        menu:
+            - home
+            - the-day
+            - accommodation
+            - rsvp
+            - giftlist
+            - faq
+    todocambridge:
+        title: Things to do in Cambridge
+        menu:
+            - home
+            - the-day
+            - accommodation
+            - rsvp
+            - giftlist
+            - faq
+    faq:
+        title: FAQ
         menu:
             - home
             - the-day
