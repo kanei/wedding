@@ -10,8 +10,7 @@ header:
 <div class="row">
   <div class="col-xs-12">
     <dl class="info-list">
-        <dl>
-            <dt>What are Frequently Asked Questions?</dt>
+          <dt>What are Frequently Asked Questions?</dt>
             <dd>Questions that get asked so much that we put them here so we don't have to answer them anymore.</dd>
             <dt>What is the dress code?</dt>
             <dd>It is formal &amp; extra victory points will be awarded for hats or for adding your own flair.</dd>
@@ -32,8 +31,6 @@ header:
             <dt>What food &amp; drinks will be available at the Evening Party?</dt>
             <dd>There will be cheese platters, cake &amp; a cash bar for drinks. We plan to put a bit of money behind the bar to get you started, but it won't last forever so please do bring some money!</dd>
         </dl>
-
-      </div>
   </div>
 </div>
 
