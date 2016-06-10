@@ -250,7 +250,7 @@ function update() {
     if (start < new Date()) {
         // count up
         var ts = countdown(start, null, units);
-        var cd_title = "Been Married"
+        var cd_title = "Been married for"
     } else {
         //  count down
         var ts = countdown(null, start, units);
