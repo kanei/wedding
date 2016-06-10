@@ -245,12 +245,24 @@ function update() {
     var units = countdown.YEARS | countdown.MONTHS | countdown.WEEKS | countdown.DAYS;
     countdown.setLabels(null, null, ' and ')
     // countdown.setLabels(null, null, '<br /> and ')
-    var start = new Date(2016, 7, 6),
-        ts = countdown(null, start, units);
+    var start = new Date(2016, 7, 6, 12, 30);
+
+    if (start < new Date()) {
+        // count up
+        var ts = countdown(start, null, units);
+        var cd_title = "Been Married"
+    } else {
+        //  count down
+        var ts = countdown(null, start, units);
+        var cd_title = "How Long till the big day?"
+    }
 
     var counter = $('#countdown');
+    var counter_title = $('#countdown_title');
 
     counter.html(ts.toHTML(null, 'Now!'));
+    counter_title.text(cd_title);
+
 
     requestAnimationFrame(update, counter.parentNode);
 }

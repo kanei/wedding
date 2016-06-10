@@ -2,7 +2,8 @@
 layout: content
 key: how_long
 ---
-## How Long till the big day?
+
+<h2 id="countdown_title"></h2>
 
 &nbsp;  
 
