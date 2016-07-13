@@ -30,6 +30,11 @@ header:
             <dd>According to <a href="http://www.oxforddictionaries.com/definition/english/meeple">Oxford Dictionary</a>: A small figure used as a playing piece in certain board games, having a stylized human form. Also from <a href="https://en.wiktionary.org/wiki/meeple">Wiktionary</a>: Blend of my +‎ people. Coined in November of 2000 by Alison Hansel during a game of Carcassonne when she fused "my" and "people" to describe the wooden figures used by each player in that game.</dd>
             <dt>What food &amp; drinks will be available at the Evening Party?</dt>
             <dd>There will be cheese platters, cake &amp; a cash bar for drinks. We plan to put a bit of money behind the bar to get you started, but it won't last forever so please do bring some money!</dd>
+            <dt>What are the local taxi numbers?</dt>
+            <dd>If you need book a taxi while you're staying, here are a couple of numbers: <br>
+                Panther: 01223 715715 <br>
+                Camcab: 01223 704704
+            </dd>
         </dl>
   </div>
 </div>
