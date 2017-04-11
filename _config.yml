@@ -153,5 +153,6 @@ permalink: pretty
 
 gems:
   - jekyll-babel
+  - jekyll-admin
 
 # babel_js_extensions: 'es6, babel, jsx'
